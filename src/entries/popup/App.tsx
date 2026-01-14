@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <>
+    <section>
       <div>
         <a href="https://wxt.dev" target="_blank">
           <img src={wxtLogo} className="logo" alt="WXT logo" />
@@ -28,7 +28,7 @@ function App() {
       <p className="read-the-docs">
         Click on the WXT and React logos to learn more
       </p>
-    </>
+    </section>
   );
 }
 
