@@ -1,10 +1,11 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/shadcn/tabs';
+import Timezones from '@/components/features/Timezones';
 import './App.css';
 
 export default function App() {
   return (
-    <section className="flex mw-full min-w-3xl flex-col gap-6">
-      <Tabs defaultValue="about">
+    <section className="flex min-w-xl flex-col gap-6">
+      <Tabs defaultValue="timezones">
         <TabsList>
           <TabsTrigger value="about">About</TabsTrigger>
           <TabsTrigger value="timezones">Timezones</TabsTrigger>
@@ -12,7 +13,7 @@ export default function App() {
           <TabsTrigger value="settings">Settings</TabsTrigger>
         </TabsList>
         <TabsContent value="about"><p>About</p></TabsContent>
-        <TabsContent value="timezones"><p>Timezones</p></TabsContent>
+        <Timezones />
         <TabsContent value="calculator"><p>Calculator</p></TabsContent>
         <TabsContent value="settings"><p>Settings</p></TabsContent>
       </Tabs>
