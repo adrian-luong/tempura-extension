@@ -1,35 +1,21 @@
-import { useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import wxtLogo from '/wxt.svg';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/shadcn/tabs';
 import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function App() {
   return (
-    <section>
-      <div>
-        <a href="https://wxt.dev" target="_blank">
-          <img src={wxtLogo} className="logo" alt="WXT logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>WXT + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the WXT and React logos to learn more
-      </p>
+    <section className="flex mw-full min-w-3xl flex-col gap-6">
+      <Tabs defaultValue="about">
+        <TabsList>
+          <TabsTrigger value="about">About</TabsTrigger>
+          <TabsTrigger value="timezones">Timezones</TabsTrigger>
+          <TabsTrigger value="calculator">Calculator</TabsTrigger>
+          <TabsTrigger value="settings">Settings</TabsTrigger>
+        </TabsList>
+        <TabsContent value="about"><p>About</p></TabsContent>
+        <TabsContent value="timezones"><p>Timezones</p></TabsContent>
+        <TabsContent value="calculator"><p>Calculator</p></TabsContent>
+        <TabsContent value="settings"><p>Settings</p></TabsContent>
+      </Tabs>
     </section>
   );
 }
-
-export default App;
